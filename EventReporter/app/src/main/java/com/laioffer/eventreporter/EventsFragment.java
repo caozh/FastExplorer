@@ -31,7 +31,7 @@ import java.util.List;
  */
 public class EventsFragment extends Fragment {
     private ImageView mImageViewAdd;
-    private static final String AD_UNIT_ID = "ca-app-pub-3940256099942544/1072772517";
+    private static final String AD_UNIT_ID = "ca-app-pub-5395940898630208/9153354928"; //"ca-app-pub-3940256099942544/1072772517";
     private RecyclerView recyclerView;
     private EventListAdapter  mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -69,18 +69,6 @@ public class EventsFragment extends Fragment {
 
     }
 
-    //homework
-    /*
-    public void onItemSelected(int position){
-        for (int i = 0; i < listView.getChildCount(); i++){
-            if (position == i) {
-                mListView.getChildAt(i).setBackgroundColor(Color.BLUE);
-            } else {
-                mListView.getChildAt(i).setBackgroundColor(Color.parseColor("#EEEEEE"));
-            }
-        }
-    }
-    */
     public void setAdapter() {
         events = new ArrayList<Event>();
         database.child("events").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -97,7 +85,7 @@ public class EventsFragment extends Fragment {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                //TODO: do something
+
             }
         });
     }

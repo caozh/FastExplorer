@@ -27,10 +27,6 @@ import java.util.List;
 
 import static android.content.Context.LOCATION_SERVICE;
 
-/**
- * Created by Zhihao on 10/4/2017.
- */
-
 public class LocationTracker implements LocationListener {
     private final Activity mContext;
     private static final int PERMISSIONS_REQUEST_LOCATION = 99;
@@ -154,7 +150,6 @@ public class LocationTracker implements LocationListener {
                 android.Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
 
-            // No explanation needed, we can request the permission.
             ActivityCompat.requestPermissions(mContext,
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
                     PERMISSIONS_REQUEST_LOCATION);
@@ -202,11 +197,16 @@ public class LocationTracker implements LocationListener {
                     JSONObject r = results.getJSONObject(i);
                     if (!r.getString("formatted_address").equals("")) {
                         String formatted_addresses[] = r.getString("formatted_address").split(",");
+                        /*
+                        for(String s : formatted_addresses) {
+                            address.add(s);
+                        }*/
                         address.add(formatted_addresses[0]);
                         address.add(formatted_addresses[1]);
                         address.add(formatted_addresses[2]);
                         address.add(formatted_addresses[3]);
                         break;
+
                     }
                     i++;
                 }while(i<results.length());

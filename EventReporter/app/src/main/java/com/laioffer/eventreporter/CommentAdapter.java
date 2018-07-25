@@ -19,9 +19,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Zhihao on 10/16/2017.
- */
 
 public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
     private Context context;
@@ -147,11 +144,15 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         holder.eventTitle.setText(event.getTitle());
         String[] locations = event.getAddress().split(",");
         holder.eventLocation.setText(locations[1] + "," + locations[2]);
+        /*StringBuilder sb = new StringBuilder();
+        for (String s : locations) sb.append(s + ",");
+        sb.setLength(sb.length() - 1);
+        holder.eventLocation.setText(sb.toString());
+        */
         holder.eventDescription.setText(event.getDescription());
         holder.eventTime.setText(Utils.timeTransformer(event.getTime()));
         holder.eventCommentNumber.setText(String.valueOf(event.getCommentNumber()));
         holder.eventLikeNumber.setText(String.valueOf(event.getLike()));
-
 
         if (event.getImgUri() != null) {
             final String url = event.getImgUri();
@@ -170,7 +171,6 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         } else {
             holder.eventImgView.setVisibility(View.GONE);
         }
-
 
         holder.eventImgViewGood.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -199,7 +199,6 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     private void configureCommentView(final CommentViewHolder commentHolder, final int position) {
-        //Why is position - 1?
         final Comment comment = commentList.get(position - 1);
         commentHolder.commentUser.setText(comment.getCommenter());
         commentHolder.commentDescription.setText(comment.getDescription());

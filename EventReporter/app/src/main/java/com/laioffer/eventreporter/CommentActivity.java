@@ -27,7 +27,6 @@ public class CommentActivity extends AppCompatActivity {
     private Button mCommentSubmitButton;
     private RecyclerView.LayoutManager mLayoutManager;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +56,6 @@ public class CommentActivity extends AppCompatActivity {
         });
 
         getData(eventId, commentAdapter);
-
     }
 
     private void getData(final String eventId, final CommentAdapter commentAdapter) {

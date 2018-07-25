@@ -1,9 +1,5 @@
 package com.laioffer.eventreporter;
 
-/**
- * Created by Zhihao on 10/2/2017.
- */
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;

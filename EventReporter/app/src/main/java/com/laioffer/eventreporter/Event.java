@@ -1,13 +1,7 @@
 package com.laioffer.eventreporter;
 
-/**
- * Created by Zhihao on 9/25/2017.
- */
-
 public class Event {
-    /**
-     * All data for a event.
-     */
+
     private String title;
     private String address;
     private String description;

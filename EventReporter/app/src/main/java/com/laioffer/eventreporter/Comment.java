@@ -1,9 +1,5 @@
 package com.laioffer.eventreporter;
 
-/**
- * Created by Zhihao on 10/16/2017.
- */
-
 public class Comment {
     private String commentId;
     private String commenter;

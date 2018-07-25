@@ -1,9 +1,5 @@
 package com.laioffer.eventreporter;
 
-/**
- * Created by Zhihao on 10/2/2017.
- */
-
 public class User {
     private String username;
     private String password;

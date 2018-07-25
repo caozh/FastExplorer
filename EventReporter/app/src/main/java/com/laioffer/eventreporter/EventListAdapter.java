@@ -24,10 +24,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Zhihao on 10/9/2017.
- */
-
 public class EventListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Event> eventList;
     private Context context;
@@ -241,7 +237,5 @@ public class EventListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }
         return viewHolder;
     }
-
-
 
 }
